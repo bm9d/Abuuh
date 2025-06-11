@@ -1,0 +1,416 @@
+Put your HTML text here<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>محول الماركداون الأنيق</title>
+
+    <!-- Bootstrap 5.3.2 RTL CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" xintegrity="sha384-nU14brUcp6StFntEOOEBvcJm4huWjB0OcIeQ3fltAfSmuZFrkAif0T+UtNGlKKQv" crossorigin="anonymous">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    
+    <!-- Google Fonts: Inter (UI) & Playfair Display (Headings) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- Marked.js Library -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <style>
+        :root {
+            --bg-color: #121212;
+            --panel-color: rgba(23, 23, 23, 0.8);
+            --border-color: rgba(212, 175, 55, 0.2);
+            --primary-accent: #D4AF37; /* Gold */
+            --text-light: #EAEAEA;
+            --text-muted: #A0A0A0;
+            --font-ui: 'Inter', sans-serif;
+            --font-heading: 'Playfair Display', serif;
+        }
+
+        /* General Body Styling - Elegant Dark Theme */
+        body {
+            font-family: var(--font-ui);
+            background-color: var(--bg-color);
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%231a1a1a' fill-opacity='0.4'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h4v-9H0v-1h4v-9H0v-1h4v-9H0v-1h4v-9H0v-1h4v-9H0v-1h4v-9H0v-1h4v-9H0v-1h4v-9H0v-1h9v-4h1v-4h9v-4h1v-4h9v-4h1v-4h9v-4h1v-4h9v-4h1v-4h9v-4h1v-4h9v-4h1v4h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            color: var(--text-light);
+            min-height: 100vh;
+        }
+
+        .main-container {
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+        }
+
+        .main-title {
+            font-family: var(--font-heading);
+            color: var(--primary-accent);
+            text-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+            letter-spacing: 1px;
+            font-size: 2.5rem;
+        }
+        .main-title .bi {
+            transform: translateY(-5px);
+        }
+        
+        /* Panels for input and output */
+        .panel {
+            background-color: var(--panel-color);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--border-color);
+            border-radius: 15px;
+            height: calc(100vh - 180px); /* Adjust height based on your layout */
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            transition: box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+        .panel:hover {
+            box-shadow: 0 0 20px 0 rgba(212, 175, 55, 0.1);
+            border-color: rgba(212, 175, 55, 0.4);
+        }
+        
+        .panel-header {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+        
+        .panel-body {
+            padding: 1.5rem;
+            overflow-y: auto;
+            flex-grow: 1;
+        }
+        
+        /* Custom scrollbar for webkit browsers */
+        .panel-body::-webkit-scrollbar { width: 8px; }
+        .panel-body::-webkit-scrollbar-track { background: transparent; }
+        .panel-body::-webkit-scrollbar-thumb { background-color: rgba(212, 175, 55, 0.5); border-radius: 10px; }
+        .panel-body::-webkit-scrollbar-thumb:hover { background-color: var(--primary-accent); }
+
+        #markdown-input {
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            border: none;
+            color: var(--text-light);
+            font-size: 1rem;
+            line-height: 1.7;
+            resize: none;
+        }
+        #markdown-input:focus {
+            outline: none;
+        }
+        
+        #result {
+            font-size: 1rem;
+            line-height: 1.8;
+            word-wrap: break-word;
+        }
+        /* Result area styling */
+        #result h1, #result h2, #result h3, #result h4, #result h5, #result h6 { font-family: var(--font-heading); color: var(--primary-accent); }
+        #result h1 { border-bottom: 2px solid var(--primary-accent); }
+        #result strong { color: #fff; font-weight: bold; }
+        #result em { color: #f0e68c; font-style: italic; }
+        #result p { color: var(--text-light); }
+        #result a { color: var(--primary-accent); text-decoration: none; }
+        #result a:hover { text-decoration: underline; }
+        #result pre { background-color: rgba(0,0,0,0.2); border: 1px solid var(--border-color); border-radius: 8px; padding: 1rem; direction: ltr; text-align: left; }
+        #result code { font-family: 'Courier New', monospace; background-color: rgba(212, 175, 55, 0.1); color: var(--primary-accent); padding: 3px 6px; border-radius: 4px; }
+        #result table { direction: ltr; text-align: left; width: 100%; border-collapse: collapse; background-color: rgba(0,0,0,0.1); }
+        #result th, #result td { border: 1px solid var(--border-color); padding: 0.75rem; }
+        #result thead th { background-color: rgba(212, 175, 55, 0.1); }
+
+        /* Controls Section */
+        .controls-section { padding: 1.5rem; background-color: var(--panel-color); border-radius: 15px; border: 1px solid var(--border-color); }
+        .form-label { color: var(--text-muted); font-size: 0.9rem; }
+        .form-control, .form-check-input { background-color: var(--bg-color); color: var(--text-light); border: 1px solid var(--border-color); }
+        .form-control:focus { background-color: var(--bg-color); color: var(--text-light); border-color: var(--primary-accent); box-shadow: 0 0 8px rgba(212, 175, 55, 0.3); }
+        .form-check-input:checked { background-color: var(--primary-accent); border-color: var(--primary-accent); }
+
+        /* Buttons */
+        .btn-gold {
+            background: transparent;
+            border: 1px solid var(--primary-accent);
+            color: var(--primary-accent);
+            padding: 10px 20px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        .btn-gold:hover, .btn-gold.active {
+            background-color: var(--primary-accent);
+            color: #000;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+            transform: translateY(-2px);
+        }
+
+        /* Floating buttons */
+        .floating-buttons {
+            position: fixed; top: 20px; right: 20px; z-index: 1000; display: flex; gap: 10px;
+        }
+        .floating-buttons .btn {
+            width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;
+            background-color: var(--panel-color); border: 1px solid var(--border-color); color: var(--text-muted);
+            backdrop-filter: blur(10px); transition: all 0.3s ease;
+        }
+        .floating-buttons .btn:hover { color: var(--primary-accent); border-color: var(--primary-accent); box-shadow: 0 0 10px rgba(212, 175, 55, 0.4); }
+
+        /* Watermark */
+        #watermark {
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            display: flex; flex-wrap: wrap; justify-content: center; align-items: center;
+            overflow: hidden; pointer-events: none; z-index: 9999;
+        }
+        .watermark-text {
+            font-weight: bold; color: rgba(255, 255, 255, 0.03); transform: rotate(-45deg);
+            white-space: nowrap; padding: 50px; font-size: 50px;
+        }
+        
+        /* Toast Notification */
+        .toast-notification {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--primary-accent);
+            color: #000;
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: 500;
+            z-index: 1050;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s, bottom 0.3s;
+        }
+        .toast-notification.show {
+            opacity: 1;
+            visibility: visible;
+            bottom: 40px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 991.98px) {
+            .panel {
+                height: auto;
+                min-height: 400px;
+                margin-bottom: 2rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Floating Action Buttons -->
+    <div class="floating-buttons">
+        <button class="btn" title="طباعة" onclick="printResult()"><i class="bi bi-printer-fill"></i></button>
+        <button class="btn" title="تبديل التمرير" onclick="toggleScroll()"><i class="bi bi-arrow-down-up"></i></button>
+    </div>
+    
+    <!-- Main Content Area -->
+    <div class="container-fluid main-container">
+        <h1 class="text-center mb-5 main-title"><i class="bi bi-gem me-3"></i> محول الماركداون الأنيق</h1>
+        
+        <div class="row gx-4">
+            <!-- Left Panel: Input & Controls -->
+            <div class="col-lg-6 d-flex flex-column">
+                <div class="panel flex-grow-1">
+                    <div class="panel-header">محرر الماركداون</div>
+                    <div class="panel-body p-0">
+                        <textarea id="markdown-input" class="p-4" oninput="convertMarkdown()" placeholder="اكتب نص الماركداون هنا..."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Panel: Output -->
+            <div class="col-lg-6 d-flex flex-column">
+                 <div class="panel flex-grow-1">
+                    <div class="panel-header">النتيجة المباشرة</div>
+                    <div class="panel-body" id="result"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls Section below panels -->
+        <div class="controls-section mt-4">
+            <div class="row g-3 align-items-end">
+                <!-- Watermark Controls -->
+                <div class="col-lg-6 col-md-12">
+                     <p class="mb-2 fw-bold" style="color: var(--primary-accent);">إعدادات العلامة المائية</p>
+                    <div class="row g-2">
+                        <div class="col-4"><input type="text" id="watermark-text" class="form-control" value="سري" oninput="updateWatermark()" placeholder="النص"></div>
+                        <div class="col-2"><input type="number" id="watermark-size" class="form-control" value="50" oninput="updateWatermark()" title="حجم الخط"></div>
+                        <div class="col-2"><input type="number" id="watermark-count" class="form-control" value="50" oninput="updateWatermark()" title="عدد التكرارات"></div>
+                        <div class="col-4 d-flex align-items-center">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="enable-watermark" onchange="updateWatermark()">
+                                <label class="form-check-label" for="enable-watermark">تفعيل</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="col-lg-6 col-md-12">
+                    <p class="mb-2 fw-bold" style="color: var(--primary-accent);">أدوات التحكم</p>
+                    <div class="d-flex gap-2">
+                        <button class="btn btn-gold flex-fill" onclick="copyResult()">نسخ النتيجة</button>
+                        <button class="btn btn-gold flex-fill" onclick="copyResultCode()">نسخ الكود</button>
+                        <button class="btn btn-gold flex-fill" onclick="deleteResult()">حذف</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Watermark and Toast Containers -->
+    <div id="watermark"></div>
+    <div id="toast" class="toast-notification"></div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    
+    <!-- Main JavaScript Logic -->
+    <script>
+        // DOM element references
+        const markdownInput = document.getElementById('markdown-input');
+        const resultDiv = document.getElementById('result');
+        const watermarkDiv = document.getElementById('watermark');
+        const watermarkText = document.getElementById('watermark-text');
+        const watermarkSize = document.getElementById('watermark-size');
+        const watermarkCount = document.getElementById('watermark-count');
+        const enableWatermark = document.getElementById('enable-watermark');
+        const toastEl = document.getElementById('toast');
+        let toastTimeout;
+
+        function showToast(message) {
+            clearTimeout(toastTimeout);
+            toastEl.textContent = message;
+            toastEl.classList.add('show');
+            toastTimeout = setTimeout(() => {
+                toastEl.classList.remove('show');
+            }, 3000);
+        }
+        
+        function detectFirstCharDirection(text) {
+            if (!text) return 'rtl';
+            const firstChar = text.match(/[a-zA-Z\u0600-\u06FF]/);
+            if (firstChar) {
+                const char = firstChar[0];
+                if (char >= '\u0600' && char <= '\u06FF') return 'rtl';
+            }
+            return 'ltr';
+        }
+
+        function replaceCenterTags(md) {
+            return md.replace(/@(.*?)@/g, '<p style="text-align:center; font-weight:bold; color: var(--primary-accent);">$1</p>');
+        }
+
+        function convertMarkdown() {
+            let markdownText = markdownInput.value;
+            markdownText = replaceCenterTags(markdownText);
+            const rawHtml = marked.parse(markdownText, { breaks: true, gfm: true }); // Enable GFM and breaks
+
+            const tempDiv = document.createElement('div');
+            tempDiv.innerHTML = rawHtml;
+
+            const elements = tempDiv.querySelectorAll('p, li, h1, h2, h3, h4, h5, h6, blockquote');
+            elements.forEach(el => {
+                const direction = detectFirstCharDirection(el.textContent);
+                el.style.direction = direction;
+                el.style.textAlign = direction === 'rtl' ? 'right' : 'left';
+            });
+            
+            resultDiv.innerHTML = tempDiv.innerHTML;
+        }
+
+        function updateWatermark() {
+            watermarkDiv.innerHTML = '';
+            if (enableWatermark.checked) {
+                watermarkDiv.style.display = 'flex';
+                const text = watermarkText.value;
+                const size = watermarkSize.value;
+                const count = parseInt(watermarkCount.value, 10);
+                for (let i = 0; i < count; i++) {
+                    const span = document.createElement('span');
+                    span.className = 'watermark-text';
+                    span.textContent = text;
+                    span.style.fontSize = `${size}px`;
+                    watermarkDiv.appendChild(span);
+                }
+            } else {
+                watermarkDiv.style.display = 'none';
+            }
+        }
+
+        function printResult() {
+            const printWindow = window.open('', '_blank');
+            const watermarkHTML = enableWatermark.checked ? watermarkDiv.outerHTML : '';
+            printWindow.document.write(`
+                <html>
+                <head>
+                    <title>طباعة النتيجة</title>
+                    <style>
+                        :root { --primary-accent: #D4AF37; }
+                        body { font-family: 'Inter', sans-serif; direction: rtl; color: #000; }
+                        #result h1, #result h2, #result h3 { color: var(--primary-accent); }
+                        #result pre { background-color: #f1f3f5; padding: 1rem; direction: ltr; text-align: left; }
+                        #result table { direction: ltr; text-align: left; width: 100%; border-collapse: collapse; }
+                        #result th, #result td { border: 1px solid #dee2e6; padding: 0.75rem; }
+                        #watermark { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; overflow: hidden; z-index: -1; }
+                        .watermark-text { font-weight: bold; color: rgba(0, 0, 0, 0.06); transform: rotate(-45deg); white-space: nowrap; padding: 50px; font-size: ${watermarkSize.value}px; }
+                    </style>
+                </head>
+                <body>
+                    ${watermarkHTML}
+                    <div id="result">${resultDiv.innerHTML}</div>
+                    <script>
+                        setTimeout(() => { window.print(); window.close(); }, 250);
+                    </script>
+                </body>
+                </html>
+            `);
+            printWindow.document.close();
+        }
+
+        function copyResult() {
+            if(!resultDiv.innerHTML) return showToast('لا يوجد محتوى لنسخه!');
+            navigator.clipboard.writeText(resultDiv.innerHTML)
+                .then(() => showToast('تم نسخ النتيجة بنجاح!'))
+                .catch(() => showToast('فشل النسخ.'));
+        }
+
+        function copyResultCode() {
+            if(!resultDiv.innerHTML) return showToast('لا يوجد محتوى لنسخه!');
+            navigator.clipboard.writeText(resultDiv.outerHTML)
+                .then(() => showToast('تم نسخ الكود بنجاح!'))
+                .catch(() => showToast('فشل النسخ.'));
+        }
+        
+        function deleteResult() {
+            markdownInput.value = '';
+            resultDiv.innerHTML = '';
+            showToast('تم حذف المحتوى.');
+        }
+        
+        let isScrolledDown = false;
+        function toggleScroll() {
+            const target = isScrolledDown ? document.body : document.documentElement;
+            const targetScroll = isScrolledDown ? 0 : document.body.scrollHeight;
+            window.scrollTo({ top: targetScroll, behavior: 'smooth' });
+            isScrolledDown = !isScrolledDown;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            convertMarkdown();
+            updateWatermark();
+        });
+    </script>
+
+</body>
+</html>
