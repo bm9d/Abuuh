@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Parfum Luxe</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header__container">
+            <div class="header__logo">
+                <h1><a href="index.html">Parfum Luxe</a></h1>
+            </div>
+            <nav class="header__nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="products.html" class="nav__link">Products</a></li>
+                    <li class="nav__item"><a href="about.html" class="nav__link nav__link--active">About</a></li>
+                    <li class="nav__item"><a href="contact.html" class="nav__link">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header__actions">
+                <button class="header__search-btn" id="searchToggle">
+                    <i class="fas fa-search"></i>
+                </button>
+                <a href="cart.html" class="header__cart">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </a>
+            </div>
+        </div>
+        <button class="header__mobile-toggle" id="mobileToggle">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="header__search" id="searchBar">
+            <input type="text" class="search__input" placeholder="Search perfumes..." id="searchInput">
+            <button class="search__btn" id="searchBtn">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-header__title">About Parfum Luxe</h1>
+            <p class="page-header__subtitle">Discover the story behind our passion for perfume</p>
+        </div>
+    </section>
+
+    <!-- About Content -->
+    <section class="about-content">
+        <div class="container">
+            <!-- Our Story -->
+            <div class="content-section">
+                <div class="content-section__grid">
+                    <div class="content-section__text">
+                        <h2 class="content-section__title">Our Story</h2>
+                        <p class="content-section__paragraph">
+                            Founded with a passion for exquisite fragrances, Parfum Luxe has been curating the world's finest perfumes since our inception. We believe that fragrance is more than just a scent – it's a personal signature, a memory maker, and a form of self-expression.
+                        </p>
+                        <p class="content-section__paragraph">
+                            Our journey began with a simple mission: to make luxury perfumes accessible to fragrance enthusiasts everywhere. We work directly with renowned perfume houses and emerging artisans to bring you an exclusive collection that spans from timeless classics to contemporary masterpieces.
+                        </p>
+                    </div>
+                    <div class="content-section__image">
+                        <svg width="400" height="300" viewBox="0 0 400 300" fill="none">
+                            <!-- Perfume shop illustration -->
+                            <rect width="400" height="300" fill="#F8F8FF"/>
+                            <rect x="50" y="50" width="300" height="200" fill="#FFF" stroke="#E6E6FA" stroke-width="2"/>
+                            <!-- Shelves -->
+                            <rect x="80" y="80" width="240" height="20" fill="#DDA0DD"/>
+                            <rect x="80" y="130" width="240" height="20" fill="#DDA0DD"/>
+                            <rect x="80" y="180" width="240" height="20" fill="#DDA0DD"/>
+                            <!-- Perfume bottles -->
+                            <rect x="100" y="60" width="15" height="25" rx="3" fill="#FFB6C1"/>
+                            <rect x="140" y="60" width="15" height="25" rx="3" fill="#DDA0DD"/>
+                            <rect x="180" y="60" width="15" height="25" rx="3" fill="#E6E6FA"/>
+                            <text x="200" y="270" text-anchor="middle" fill="#8B008B" font-size="14">Parfum Luxe</text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Our Mission -->
+            <div class="content-section content-section--reverse">
+                <div class="content-section__grid">
+                    <div class="content-section__text">
+                        <h2 class="content-section__title">Our Mission</h2>
+                        <p class="content-section__paragraph">
+                            At Parfum Luxe, we're committed to providing an exceptional fragrance shopping experience. We carefully select each perfume in our collection based on quality, uniqueness, and the artistry behind its creation.
+                        </p>
+                        <p class="content-section__paragraph">
+                            Our expert team is passionate about helping you discover your perfect scent. Whether you're seeking a signature fragrance, exploring new olfactory territories, or searching for the perfect gift, we're here to guide you through your fragrance journey.
+                        </p>
+                    </div>
+                    <div class="content-section__image">
+                        <svg width="400" height="300" viewBox="0 0 400 300" fill="none">
+                            <!-- Mission illustration -->
+                            <circle cx="200" cy="150" r="100" fill="#E6E6FA" opacity="0.3"/>
+                            <circle cx="200" cy="150" r="70" fill="#DDA0DD" opacity="0.5"/>
+                            <circle cx="200" cy="150" r="40" fill="#8B008B" opacity="0.7"/>
+                            <text x="200" y="155" text-anchor="middle" fill="#FFF" font-size="12" font-weight="bold">QUALITY</text>
+                            <!-- Decorative elements -->
+                            <circle cx="120" cy="80" r="8" fill="#FFB6C1"/>
+                            <circle cx="280" cy="90" r="6" fill="#DDA0DD"/>
+                            <circle cx="100" cy="220" r="5" fill="#E6E6FA"/>
+                            <circle cx="300" cy="210" r="7" fill="#DA70D6"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Values -->
+            <div class="values-section">
+                <h2 class="section__title">Our Values</h2>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <div class="value-card__icon">
+                            <i class="fas fa-gem"></i>
+                        </div>
+                        <h3 class="value-card__title">Quality</h3>
+                        <p class="value-card__description">
+                            We source only authentic, premium fragrances from established and emerging perfume houses worldwide.
+                        </p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-card__icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="value-card__title">Customer Care</h3>
+                        <p class="value-card__description">
+                            Our knowledgeable team provides personalized service to help you find your perfect fragrance match.
+                        </p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-card__icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h3 class="value-card__title">Sustainability</h3>
+                        <p class="value-card__description">
+                            We're committed to supporting brands that prioritize sustainable and ethical practices.
+                        </p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-card__icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h3 class="value-card__title">Innovation</h3>
+                        <p class="value-card__description">
+                            We continuously seek out unique and innovative fragrances that push the boundaries of perfumery.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team -->
+            <div class="team-section">
+                <h2 class="section__title">Meet Our Team</h2>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="team-member__image">
+                            <svg width="150" height="150" viewBox="0 0 150 150">
+                                <circle cx="75" cy="75" r="75" fill="#E6E6FA"/>
+                                <circle cx="75" cy="60" r="25" fill="#DDA0DD"/>
+                                <ellipse cx="75" cy="120" rx="35" ry="45" fill="#DDA0DD"/>
+                            </svg>
+                        </div>
+                        <h3 class="team-member__name">Sarah Johnson</h3>
+                        <p class="team-member__title">Founder & CEO</p>
+                        <p class="team-member__description">
+                            With over 15 years in the fragrance industry, Sarah founded Parfum Luxe to share her passion for exceptional perfumes.
+                        </p>
+                    </div>
+                    <div class="team-member">
+                        <div class="team-member__image">
+                            <svg width="150" height="150" viewBox="0 0 150 150">
+                                <circle cx="75" cy="75" r="75" fill="#FFB6C1"/>
+                                <circle cx="75" cy="60" r="25" fill="#DA70D6"/>
+                                <ellipse cx="75" cy="120" rx="35" ry="45" fill="#DA70D6"/>
+                            </svg>
+                        </div>
+                        <h3 class="team-member__name">Michael Chen</h3>
+                        <p class="team-member__title">Head of Curation</p>
+                        <p class="team-member__description">
+                            Michael's expertise in fragrance composition helps us select the most exquisite perfumes for our collection.
+                        </p>
+                    </div>
+                    <div class="team-member">
+                        <div class="team-member__image">
+                            <svg width="150" height="150" viewBox="0 0 150 150">
+                                <circle cx="75" cy="75" r="75" fill="#DDA0DD"/>
+                                <circle cx="75" cy="60" r="25" fill="#8B008B"/>
+                                <ellipse cx="75" cy="120" rx="35" ry="45" fill="#8B008B"/>
+                            </svg>
+                        </div>
+                        <h3 class="team-member__name">Emily Rodriguez</h3>
+                        <p class="team-member__title">Customer Experience Manager</p>
+                        <p class="team-member__description">
+                            Emily ensures every customer receives personalized service and finds their perfect fragrance match.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__section">
+                    <h3 class="footer__title">Parfum Luxe</h3>
+                    <p class="footer__description">Your destination for premium perfumes and luxury fragrances.</p>
+                    <div class="footer__social">
+                        <a href="#" class="footer__social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="footer__social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="footer__social-link"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer__section">
+                    <h4 class="footer__subtitle">Quick Links</h4>
+                    <ul class="footer__list">
+                        <li><a href="products.html" class="footer__link">All Products</a></li>
+                        <li><a href="about.html" class="footer__link">About Us</a></li>
+                        <li><a href="contact.html" class="footer__link">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h4 class="footer__subtitle">Customer Service</h4>
+                    <ul class="footer__list">
+                        <li><a href="#" class="footer__link">Shipping Info</a></li>
+                        <li><a href="#" class="footer__link">Returns</a></li>
+                        <li><a href="#" class="footer__link">Size Guide</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h4 class="footer__subtitle">Contact Info</h4>
+                    <p class="footer__contact">Email: info@parfumluxe.com</p>
+                    <p class="footer__contact">Phone: +1 (555) 123-4567</p>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2025 Parfum Luxe. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/utils.js"></script>
+    <script src="js/cart.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCartCount();
+        });
+    </script>
+</body>
+</html>

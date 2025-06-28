@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parfum Luxe - Premium Perfumes</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header__container">
+            <div class="header__logo">
+                <h1>Parfum Luxe</h1>
+            </div>
+            <nav class="header__nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link nav__link--active">Home</a></li>
+                    <li class="nav__item"><a href="products.html" class="nav__link">Products</a></li>
+                    <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
+                    <li class="nav__item"><a href="contact.html" class="nav__link">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header__actions">
+                <button class="header__search-btn" id="searchToggle">
+                    <i class="fas fa-search"></i>
+                </button>
+                <a href="cart.html" class="header__cart">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </a>
+            </div>
+        </div>
+        <!-- Mobile Menu Toggle -->
+        <button class="header__mobile-toggle" id="mobileToggle">
+            <i class="fas fa-bars"></i>
+        </button>
+        <!-- Search Bar -->
+        <div class="header__search" id="searchBar">
+            <input type="text" class="search__input" placeholder="Search perfumes..." id="searchInput">
+            <button class="search__btn" id="searchBtn">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero__content">
+            <h2 class="hero__title">Discover Your Signature Scent</h2>
+            <p class="hero__subtitle">Explore our curated collection of luxury perfumes from renowned brands</p>
+            <a href="products.html" class="btn btn--primary">Shop Now</a>
+        </div>
+        <div class="hero__image">
+            <svg width="400" height="300" viewBox="0 0 400 300" fill="none">
+                <!-- Perfume bottle SVG -->
+                <rect x="150" y="50" width="100" height="180" rx="20" fill="#E8E8E8" stroke="#D1D1D1" stroke-width="2"/>
+                <rect x="160" y="40" width="80" height="20" rx="5" fill="#B8860B"/>
+                <rect x="170" y="25" width="60" height="20" rx="3" fill="#DAA520"/>
+                <circle cx="200" cy="15" r="8" fill="#FFD700"/>
+                <rect x="165" y="70" width="70" height="120" fill="#F5F5DC" opacity="0.7"/>
+                <text x="200" y="140" text-anchor="middle" fill="#8B4513" font-family="serif" font-size="12">LUXE</text>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured">
+        <div class="container">
+            <h2 class="section__title">Featured Perfumes</h2>
+            <div class="featured__grid" id="featuredProducts">
+                <!-- Featured products will be loaded dynamically -->
+                <div class="product-card">
+                    <div class="product-card__image">
+                        <svg width="200" height="250" viewBox="0 0 200 250">
+                            <rect x="50" y="30" width="100" height="180" rx="15" fill="#FFE4E1" stroke="#DDD" stroke-width="1"/>
+                            <rect x="60" y="25" width="80" height="15" rx="3" fill="#FF69B4"/>
+                            <rect x="70" y="15" width="60" height="15" rx="2" fill="#FF1493"/>
+                            <circle cx="100" cy="8" r="5" fill="#DC143C"/>
+                            <text x="100" y="130" text-anchor="middle" fill="#8B008B" font-size="10">ROSE</text>
+                        </svg>
+                    </div>
+                    <div class="product-card__content">
+                        <h3 class="product-card__title">Loading...</h3>
+                        <p class="product-card__price">$0.00</p>
+                        <button class="btn btn--secondary btn--small">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories">
+        <div class="container">
+            <h2 class="section__title">Shop by Category</h2>
+            <div class="categories__grid">
+                <div class="category-card">
+                    <div class="category-card__icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3 class="category-card__title">Fresh & Clean</h3>
+                    <p class="category-card__description">Light, airy scents perfect for everyday wear</p>
+                    <a href="products.html?category=fresh" class="btn btn--outline">Explore</a>
+                </div>
+                <div class="category-card">
+                    <div class="category-card__icon">
+                        <i class="fas fa-rose"></i>
+                    </div>
+                    <h3 class="category-card__title">Floral</h3>
+                    <p class="category-card__description">Romantic and feminine floral compositions</p>
+                    <a href="products.html?category=floral" class="btn btn--outline">Explore</a>
+                </div>
+                <div class="category-card">
+                    <div class="category-card__icon">
+                        <i class="fas fa-tree"></i>
+                    </div>
+                    <h3 class="category-card__title">Woody</h3>
+                    <p class="category-card__description">Rich, warm scents with depth and character</p>
+                    <a href="products.html?category=woody" class="btn btn--outline">Explore</a>
+                </div>
+                <div class="category-card">
+                    <div class="category-card__icon">
+                        <i class="fas fa-pepper-hot"></i>
+                    </div>
+                    <h3 class="category-card__title">Oriental</h3>
+                    <p class="category-card__description">Exotic and spicy fragrances for evening</p>
+                    <a href="products.html?category=oriental" class="btn btn--outline">Explore</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter__content">
+                <h2 class="newsletter__title">Stay Updated</h2>
+                <p class="newsletter__description">Subscribe to our newsletter for exclusive offers and new arrivals</p>
+                <form class="newsletter__form" id="newsletterForm">
+                    <input type="email" class="newsletter__input" placeholder="Enter your email" required>
+                    <button type="submit" class="btn btn--primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__section">
+                    <h3 class="footer__title">Parfum Luxe</h3>
+                    <p class="footer__description">Your destination for premium perfumes and luxury fragrances.</p>
+                    <div class="footer__social">
+                        <a href="#" class="footer__social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="footer__social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="footer__social-link"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer__section">
+                    <h4 class="footer__subtitle">Quick Links</h4>
+                    <ul class="footer__list">
+                        <li><a href="products.html" class="footer__link">All Products</a></li>
+                        <li><a href="about.html" class="footer__link">About Us</a></li>
+                        <li><a href="contact.html" class="footer__link">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h4 class="footer__subtitle">Customer Service</h4>
+                    <ul class="footer__list">
+                        <li><a href="#" class="footer__link">Shipping Info</a></li>
+                        <li><a href="#" class="footer__link">Returns</a></li>
+                        <li><a href="#" class="footer__link">Size Guide</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h4 class="footer__subtitle">Contact Info</h4>
+                    <p class="footer__contact">Email: info@parfumluxe.com</p>
+                    <p class="footer__contact">Phone: +1 (555) 123-4567</p>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2025 Parfum Luxe. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <script src="js/utils.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

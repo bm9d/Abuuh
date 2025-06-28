@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - Parfum Luxe</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header__container">
+            <div class="header__logo">
+                <h1><a href="index.html">Parfum Luxe</a></h1>
+            </div>
+            <nav class="header__nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="products.html" class="nav__link">Products</a></li>
+                    <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
+                    <li class="nav__item"><a href="contact.html" class="nav__link">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header__actions">
+                <button class="header__search-btn" id="searchToggle">
+                    <i class="fas fa-search"></i>
+                </button>
+                <a href="cart.html" class="header__cart">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </a>
+            </div>
+        </div>
+        <button class="header__mobile-toggle" id="mobileToggle">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="header__search" id="searchBar">
+            <input type="text" class="search__input" placeholder="Search perfumes..." id="searchInput">
+            <button class="search__btn" id="searchBtn">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb__list">
+                <li class="breadcrumb__item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb__item"><a href="products.html">Products</a></li>
+                <li class="breadcrumb__item" id="breadcrumbProduct">Product</li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Product Detail -->
+    <section class="product-detail">
+        <div class="container">
+            <div class="product-detail__grid" id="productDetailGrid">
+                <!-- Product content will be loaded dynamically -->
+                <div class="product-detail__loading">
+                    <div class="loading-spinner"></div>
+                    <p>Loading product details...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Products -->
+    <section class="related-products">
+        <div class="container">
+            <h2 class="section__title">You May Also Like</h2>
+            <div class="related-products__grid" id="relatedProducts">
+                <!-- Related products will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__section">
+                    <h3 class="footer__title">Parfum Luxe</h3>
+                    <p class="footer__description">Your destination for premium perfumes and luxury fragrances.</p>
+                    <div class="footer__social">
+                        <a href="#" class="footer__social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="footer__social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="footer__social-link"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer__section">
+                    <h4 class="footer__subtitle">Quick Links</h4>
+                    <ul class="footer__list">
+                        <li><a href="products.html" class="footer__link">All Products</a></li>
+                        <li><a href="about.html" class="footer__link">About Us</a></li>
+                        <li><a href="contact.html" class="footer__link">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h4 class="footer__subtitle">Customer Service</h4>
+                    <ul class="footer__list">
+                        <li><a href="#" class="footer__link">Shipping Info</a></li>
+                        <li><a href="#" class="footer__link">Returns</a></li>
+                        <li><a href="#" class="footer__link">Size Guide</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h4 class="footer__subtitle">Contact Info</h4>
+                    <p class="footer__contact">Email: info@parfumluxe.com</p>
+                    <p class="footer__contact">Phone: +1 (555) 123-4567</p>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2025 Parfum Luxe. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <script src="js/utils.js"></script>
+    <script src="js/cart.js"></script>
+    <script>
+        // Product detail page logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = urlParams.get('id');
+            
+            if (!productId) {
+                window.location.href = 'products.html';
+                return;
+            }
+
+            loadProductDetail(productId);
+            updateCartCount();
+        });
+
+        async function loadProductDetail(productId) {
+            try {
+                showLoading();
+                
+                // Load product data from Google Apps Script
+                const product = await fetchProductById(productId);
+                
+                if (!product) {
+                    showError('Product not found');
+                    return;
+                }
+
+                renderProductDetail(product);
+                loadRelatedProducts(product.scent_family);
+                
+            } catch (error) {
+                console.error('Error loading product:', error);
+                showError('Failed to load product details. Please try again.');
+            } finally {
+                hideLoading();
+            }
+        }
+
+        async function fetchProductById(productId) {
+            // This would integrate with Google Apps Script
+            // For now, return empty state since we don't generate mock data
+            return null;
+        }
+
+        function renderProductDetail(product) {
+            const grid = document.getElementById('productDetailGrid');
+            
+            grid.innerHTML = `
+                <!-- Product Images -->
+                <div class="product-images">
+                    <div class="product-images__main">
+                        <img src="${product.image_url || ''}" alt="${product.name}" class="product-image" id="mainImage" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <svg class="product-image-placeholder" style="display: none;" width="400" height="500" viewBox="0 0 400 500">
+                            <rect width="400" height="500" fill="#f5f5f5" stroke="#ddd"/>
+                            <text x="200" y="250" text-anchor="middle" fill="#999" font-size="16">Product Image</text>
+                        </svg>
+                    </div>
+                    <div class="product-images__thumbnails" id="thumbnails">
+                        <!-- Thumbnails would be generated if multiple images available -->
+                    </div>
+                </div>
+
+                <!-- Product Info -->
+                <div class="product-info">
+                    <h1 class="product-info__title">${product.name}</h1>
+                    <div class="product-info__brand">${product.brand}</div>
+                    <div class="product-info__price">$${product.price}</div>
+                    
+                    <div class="product-info__details">
+                        <div class="product-detail-item">
+                            <strong>Scent Family:</strong> ${product.scent_family}
+                        </div>
+                        <div class="product-detail-item">
+                            <strong>Size:</strong> ${product.size || '50ml'}
+                        </div>
+                        <div class="product-detail-item">
+                            <strong>Stock:</strong> 
+                            <span class="${product.stock > 0 ? 'in-stock' : 'out-of-stock'}">
+                                ${product.stock > 0 ? 'In Stock' : 'Out of Stock'}
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="product-info__description">
+                        <h3>Description</h3>
+                        <p>${product.description}</p>
+                    </div>
+
+                    <div class="product-actions">
+                        <div class="quantity-selector">
+                            <button class="quantity-btn" onclick="updateQuantity(-1)">-</button>
+                            <input type="number" id="quantity" value="1" min="1" max="${product.stock}">
+                            <button class="quantity-btn" onclick="updateQuantity(1)">+</button>
+                        </div>
+                        <button class="btn btn--primary btn--large" onclick="addToCart('${product.id}')" ${product.stock === 0 ? 'disabled' : ''}>
+                            ${product.stock === 0 ? 'Out of Stock' : 'Add to Cart'}
+                        </button>
+                    </div>
+
+                    <div class="product-features">
+                        <div class="feature">
+                            <i class="fas fa-truck"></i>
+                            <span>Free shipping on orders over $50</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-undo"></i>
+                            <span>30-day return policy</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Authentic products guaranteed</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            // Update breadcrumb
+            document.getElementById('breadcrumbProduct').textContent = product.name;
+            document.title = `${product.name} - Parfum Luxe`;
+        }
+
+        function updateQuantity(change) {
+            const quantityInput = document.getElementById('quantity');
+            const currentValue = parseInt(quantityInput.value);
+            const newValue = currentValue + change;
+            const maxStock = parseInt(quantityInput.max);
+            
+            if (newValue >= 1 && newValue <= maxStock) {
+                quantityInput.value = newValue;
+            }
+        }
+
+        function addToCart(productId) {
+            const quantity = parseInt(document.getElementById('quantity').value);
+            const success = window.cartManager.addToCart(productId, quantity);
+            
+            if (success) {
+                showNotification('Added to cart!', 'success');
+                updateCartCount();
+            } else {
+                showNotification('Failed to add to cart', 'error');
+            }
+        }
+
+        async function loadRelatedProducts(scentFamily) {
+            try {
+                // Load related products from Google Apps Script
+                const relatedProducts = await fetchRelatedProducts(scentFamily);
+                renderRelatedProducts(relatedProducts);
+            } catch (error) {
+                console.error('Error loading related products:', error);
+            }
+        }
+
+        async function fetchRelatedProducts(scentFamily) {
+            // This would integrate with Google Apps Script
+            return [];
+        }
+
+        function renderRelatedProducts(products) {
+            const container = document.getElementById('relatedProducts');
+            
+            if (products.length === 0) {
+                container.innerHTML = '<p class="no-related">No related products found.</p>';
+                return;
+            }
+
+            container.innerHTML = products.map(product => `
+                <div class="product-card">
+                    <a href="product-detail.html?id=${product.id}" class="product-card__link">
+                        <div class="product-card__image">
+                            <img src="${product.image_url || ''}" alt="${product.name}" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                            <svg class="product-image-placeholder" style="display: none;" width="200" height="250" viewBox="0 0 200 250">
+                                <rect width="200" height="250" fill="#f5f5f5" stroke="#ddd"/>
+                                <text x="100" y="125" text-anchor="middle" fill="#999" font-size="12">Product</text>
+                            </svg>
+                        </div>
+                        <div class="product-card__content">
+                            <h3 class="product-card__title">${product.name}</h3>
+                            <p class="product-card__brand">${product.brand}</p>
+                            <p class="product-card__price">$${product.price}</p>
+                        </div>
+                    </a>
+                </div>
+            `).join('');
+        }
+
+        function showError(message) {
+            const grid = document.getElementById('productDetailGrid');
+            grid.innerHTML = `
+                <div class="error-state">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <h2>Error</h2>
+                    <p>${message}</p>
+                    <a href="products.html" class="btn btn--primary">Back to Products</a>
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>

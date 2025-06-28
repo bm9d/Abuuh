@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Parfum Luxe</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header__container">
+            <div class="header__logo">
+                <h1><a href="index.html">Parfum Luxe</a></h1>
+            </div>
+            <nav class="header__nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="products.html" class="nav__link">Products</a></li>
+                    <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
+                    <li class="nav__item"><a href="contact.html" class="nav__link">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header__actions">
+                <a href="cart.html" class="header__cart">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Checkout Progress -->
+    <div class="checkout-progress">
+        <div class="container">
+            <div class="progress-steps">
+                <div class="progress-step progress-step--active">
+                    <span class="progress-step__number">1</span>
+                    <span class="progress-step__label">Information</span>
+                </div>
+                <div class="progress-step">
+                    <span class="progress-step__number">2</span>
+                    <span class="progress-step__label">Payment</span>
+                </div>
+                <div class="progress-step">
+                    <span class="progress-step__number">3</span>
+                    <span class="progress-step__label">Confirmation</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Section -->
+    <section class="checkout-section">
+        <div class="container">
+            <div class="checkout-layout">
+                <!-- Checkout Form -->
+                <div class="checkout-form">
+                    <form id="checkoutForm" novalidate>
+                        <!-- Contact Information -->
+                        <div class="form-section">
+                            <h2 class="form-section__title">Contact Information</h2>
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email Address *</label>
+                                <input type="email" id="email" name="email" class="form-input" required>
+                                <div class="form-error" id="emailError"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone" class="form-label">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" class="form-input" required>
+                                <div class="form-error" id="phoneError"></div>
+                            </div>
+                        </div>
+
+                        <!-- Shipping Address -->
+                        <div class="form-section">
+                            <h2 class="form-section__title">Shipping Address</h2>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName" class="form-label">First Name *</label>
+                                    <input type="text" id="firstName" name="firstName" class="form-input" required>
+                                    <div class="form-error" id="firstNameError"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName" class="form-label">Last Name *</label>
+                                    <input type="text" id="lastName" name="lastName" class="form-input" required>
+                                    <div class="form-error" id="lastNameError"></div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="address" class="form-label">Address *</label>
+                                <input type="text" id="address" name="address" class="form-input" required>
+                                <div class="form-error" id="addressError"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="apartment" class="form-label">Apartment, suite, etc. (optional)</label>
+                                <input type="text" id="apartment" name="apartment" class="form-input">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="city" class="form-label">City *</label>
+                                    <input type="text" id="city" name="city" class="form-input" required>
+                                    <div class="form-error" id="cityError"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="state" class="form-label">State *</label>
+                                    <select id="state" name="state" class="form-select" required>
+                                        <option value="">Select State</option>
+                                        <option value="AL">Alabama</option>
+                                        <option value="AK">Alaska</option>
+                                        <option value="AZ">Arizona</option>
+                                        <!-- Add more states as needed -->
+                                    </select>
+                                    <div class="form-error" id="stateError"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="zipCode" class="form-label">ZIP Code *</label>
+                                    <input type="text" id="zipCode" name="zipCode" class="form-input" required>
+                                    <div class="form-error" id="zipCodeError"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Payment Information -->
+                        <div class="form-section">
+                            <h2 class="form-section__title">Payment Information</h2>
+                            <div class="payment-methods">
+                                <div class="payment-method">
+                                    <input type="radio" id="creditCard" name="paymentMethod" value="credit" checked>
+                                    <label for="creditCard" class="payment-method__label">
+                                        <i class="fas fa-credit-card"></i>
+                                        Credit Card
+                                    </label>
+                                </div>
+                                <div class="payment-method">
+                                    <input type="radio" id="paypal" name="paymentMethod" value="paypal">
+                                    <label for="paypal" class="payment-method__label">
+                                        <i class="fab fa-paypal"></i>
+                                        PayPal
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="credit-card-form" id="creditCardForm">
+                                <div class="form-group">
+                                    <label for="cardNumber" class="form-label">Card Number *</label>
+                                    <input type="text" id="cardNumber" name="cardNumber" class="form-input" placeholder="1234 5678 9012 3456" required>
+                                    <div class="form-error" id="cardNumberError"></div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="expiry" class="form-label">Expiry Date *</label>
+                                        <input type="text" id="expiry" name="expiry" class="form-input" placeholder="MM/YY" required>
+                                        <div class="form-error" id="expiryError"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cvv" class="form-label">CVV *</label>
+                                        <input type="text" id="cvv" name="cvv" class="form-input" placeholder="123" required>
+                                        <div class="form-error" id="cvvError"></div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="cardName" class="form-label">Name on Card *</label>
+                                    <input type="text" id="cardName" name="cardName" class="form-input" required>
+                                    <div class="form-error" id="cardNameError"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Order Notes -->
+                        <div class="form-section">
+                            <h2 class="form-section__title">Order Notes (Optional)</h2>
+                            <div class="form-group">
+                                <textarea id="orderNotes" name="orderNotes" class="form-textarea" placeholder="Special delivery instructions, gift message, etc." rows="4"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="checkout-actions">
+                            <a href="cart.html" class="btn btn--outline">Back to Cart</a>
+                            <button type="submit" class="btn btn--primary btn--large">Complete Order</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Order Summary -->
+                <aside class="order-summary">
+                    <div class="order-summary__content">
+                        <h3 class="order-summary__title">Order Summary</h3>
+                        
+                        <div class="order-items" id="orderItems">
+                            <!-- Order items will be loaded dynamically -->
+                        </div>
+
+                        <div class="order-totals">
+                            <div class="order-total-line">
+                                <span>Subtotal:</span>
+                                <span id="orderSubtotal">$0.00</span>
+                            </div>
+                            <div class="order-total-line">
+                                <span>Shipping:</span>
+                                <span id="orderShipping">$0.00</span>
+                            </div>
+                            <div class="order-total-line">
+                                <span>Tax:</span>
+                                <span id="orderTax">$0.00</span>
+                            </div>
+                            <hr class="order-total-divider">
+                            <div class="order-total-line order-total-final">
+                                <span>Total:</span>
+                                <span id="orderTotal">$0.00</span>
+                            </div>
+                        </div>
+
+                        <div class="security-badge">
+                            <i class="fas fa-lock"></i>
+                            <span>Secure checkout protected by SSL encryption</span>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__section">
+                    <h3 class="footer__title">Parfum Luxe</h3>
+                    <p class="footer__description">Your destination for premium perfumes and luxury fragrances.</p>
+                </div>
+                <div class="footer__section">
+                    <h4 class="footer__subtitle">Customer Service</h4>
+                    <ul class="footer__list">
+                        <li><a href="#" class="footer__link">Shipping Info</a></li>
+                        <li><a href="#" class="footer__link">Returns</a></li>
+                        <li><a href="#" class="footer__link">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2025 Parfum Luxe. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <script src="js/utils.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/checkout.js"></script>
+</body>
+</html>

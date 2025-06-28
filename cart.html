@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - Parfum Luxe</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header__container">
+            <div class="header__logo">
+                <h1><a href="index.html">Parfum Luxe</a></h1>
+            </div>
+            <nav class="header__nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="products.html" class="nav__link">Products</a></li>
+                    <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
+                    <li class="nav__item"><a href="contact.html" class="nav__link">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header__actions">
+                <button class="header__search-btn" id="searchToggle">
+                    <i class="fas fa-search"></i>
+                </button>
+                <a href="cart.html" class="header__cart header__cart--active">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </a>
+            </div>
+        </div>
+        <button class="header__mobile-toggle" id="mobileToggle">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="header__search" id="searchBar">
+            <input type="text" class="search__input" placeholder="Search perfumes..." id="searchInput">
+            <button class="search__btn" id="searchBtn">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-header__title">Shopping Cart</h1>
+            <p class="page-header__subtitle">Review your selected items</p>
+        </div>
+    </section>
+
+    <!-- Cart Section -->
+    <section class="cart-section">
+        <div class="container">
+            <div class="cart-layout">
+                <!-- Cart Items -->
+                <div class="cart-content">
+                    <div class="cart-items" id="cartItems">
+                        <!-- Cart items will be loaded dynamically -->
+                        <div class="empty-cart" id="emptyCart">
+                            <div class="empty-cart__icon">
+                                <i class="fas fa-shopping-bag"></i>
+                            </div>
+                            <h3 class="empty-cart__title">Your cart is empty</h3>
+                            <p class="empty-cart__description">Start shopping to add items to your cart</p>
+                            <a href="products.html" class="btn btn--primary">Continue Shopping</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cart Summary -->
+                <aside class="cart-summary" id="cartSummary" style="display: none;">
+                    <div class="cart-summary__content">
+                        <h3 class="cart-summary__title">Order Summary</h3>
+                        
+                        <div class="cart-summary__line">
+                            <span>Subtotal:</span>
+                            <span id="subtotal">$0.00</span>
+                        </div>
+                        
+                        <div class="cart-summary__line">
+                            <span>Shipping:</span>
+                            <span id="shipping">$0.00</span>
+                        </div>
+                        
+                        <div class="cart-summary__line">
+                            <span>Tax:</span>
+                            <span id="tax">$0.00</span>
+                        </div>
+                        
+                        <hr class="cart-summary__divider">
+                        
+                        <div class="cart-summary__line cart-summary__total">
+                            <span>Total:</span>
+                            <span id="total">$0.00</span>
+                        </div>
+
+                        <div class="cart-summary__actions">
+                            <a href="checkout.html" class="btn btn--primary btn--large">Proceed to Checkout</a>
+                            <a href="products.html" class="btn btn--outline">Continue Shopping</a>
+                        </div>
+
+                        <!-- Promo Code -->
+                        <div class="promo-code">
+                            <h4 class="promo-code__title">Promo Code</h4>
+                            <div class="promo-code__form">
+                                <input type="text" class="promo-code__input" placeholder="Enter code" id="promoCode">
+                                <button class="btn btn--secondary" id="applyPromo">Apply</button>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recommended Products -->
+    <section class="recommended-products">
+        <div class="container">
+            <h2 class="section__title">You May Also Like</h2>
+            <div class="recommended-products__grid" id="recommendedProducts">
+                <!-- Recommended products will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__section">
+                    <h3 class="footer__title">Parfum Luxe</h3>
+                    <p class="footer__description">Your destination for premium perfumes and luxury fragrances.</p>
+                    <div class="footer__social">
+                        <a href="#" class="footer__social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="footer__social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="footer__social-link"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer__section">
+                    <h4 class="footer__subtitle">Quick Links</h4>
+                    <ul class="footer__list">
+                        <li><a href="products.html" class="footer__link">All Products</a></li>
+                        <li><a href="about.html" class="footer__link">About Us</a></li>
+                        <li><a href="contact.html" class="footer__link">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h4 class="footer__subtitle">Customer Service</h4>
+                    <ul class="footer__list">
+                        <li><a href="#" class="footer__link">Shipping Info</a></li>
+                        <li><a href="#" class="footer__link">Returns</a></li>
+                        <li><a href="#" class="footer__link">Size Guide</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h4 class="footer__subtitle">Contact Info</h4>
+                    <p class="footer__contact">Email: info@parfumluxe.com</p>
+                    <p class="footer__contact">Phone: +1 (555) 123-4567</p>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2025 Parfum Luxe. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <script src="js/utils.js"></script>
+    <script src="js/cart.js"></script>
+    <script>
+        // Cart page specific logic
+        document.addEventListener('DOMContentLoaded', function() {
+            loadCart();
+            updateCartCount();
+            loadRecommendedProducts();
+            
+            // Initialize promo code functionality
+            document.getElementById('applyPromo').addEventListener('click', applyPromoCode);
+        });
+
+        function loadCart() {
+            const cartItems = window.cartManager.getCartItems();
+            const cartItemsContainer = document.getElementById('cartItems');
+            const emptyCart = document.getElementById('emptyCart');
+            const cartSummary = document.getElementById('cartSummary');
+
+            if (cartItems.length === 0) {
+                emptyCart.style.display = 'block';
+                cartSummary.style.display = 'none';
+                return;
+            }
+
+            emptyCart.style.display = 'none';
+            cartSummary.style.display = 'block';
+
+            // Render cart items
+            cartItemsContainer.innerHTML = cartItems.map(item => `
+                <div class="cart-item" data-product-id="${item.id}">
+                    <div class="cart-item__image">
+                        <img src="${item.image_url || ''}" alt="${item.name}" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <svg class="product-image-placeholder" style="display: none;" width="80" height="100" viewBox="0 0 80 100">
+                            <rect width="80" height="100" fill="#f5f5f5" stroke="#ddd"/>
+                            <text x="40" y="50" text-anchor="middle" fill="#999" font-size="8">Product</text>
+                        </svg>
+                    </div>
+                    <div class="cart-item__details">
+                        <h3 class="cart-item__name">${item.name}</h3>
+                        <p class="cart-item__brand">${item.brand}</p>
+                        <p class="cart-item__price">$${item.price}</p>
+                    </div>
+                    <div class="cart-item__quantity">
+                        <button class="quantity-btn" onclick="updateCartItemQuantity('${item.id}', ${item.quantity - 1})">-</button>
+                        <span class="quantity-value">${item.quantity}</span>
+                        <button class="quantity-btn" onclick="updateCartItemQuantity('${item.id}', ${item.quantity + 1})">+</button>
+                    </div>
+                    <div class="cart-item__total">
+                        $${(item.price * item.quantity).toFixed(2)}
+                    </div>
+                    <button class="cart-item__remove" onclick="removeFromCart('${item.id}')">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+            `).join('');
+
+            updateCartSummary();
+        }
+
+        function updateCartItemQuantity(productId, newQuantity) {
+            if (newQuantity <= 0) {
+                removeFromCart(productId);
+                return;
+            }
+
+            const success = window.cartManager.updateQuantity(productId, newQuantity);
+            if (success) {
+                loadCart();
+                updateCartCount();
+            }
+        }
+
+        function removeFromCart(productId) {
+            const success = window.cartManager.removeFromCart(productId);
+            if (success) {
+                loadCart();
+                updateCartCount();
+                showNotification('Item removed from cart', 'info');
+            }
+        }
+
+        function updateCartSummary() {
+            const cartItems = window.cartManager.getCartItems();
+            const subtotal = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            const shipping = subtotal > 50 ? 0 : 9.99;
+            const tax = subtotal * 0.08; // 8% tax
+            const total = subtotal + shipping + tax;
+
+            document.getElementById('subtotal').textContent = `$${subtotal.toFixed(2)}`;
+            document.getElementById('shipping').textContent = shipping === 0 ? 'Free' : `$${shipping.toFixed(2)}`;
+            document.getElementById('tax').textContent = `$${tax.toFixed(2)}`;
+            document.getElementById('total').textContent = `$${total.toFixed(2)}`;
+        }
+
+        function applyPromoCode() {
+            const promoCode = document.getElementById('promoCode').value.trim();
+            
+            if (!promoCode) {
+                showNotification('Please enter a promo code', 'error');
+                return;
+            }
+
+            // Mock promo code validation
+            const validCodes = {
+                'WELCOME10': 0.10,
+                'SAVE20': 0.20,
+                'FREESHIP': 'freeship'
+            };
+
+            if (validCodes[promoCode.toUpperCase()]) {
+                showNotification('Promo code applied successfully!', 'success');
+                updateCartSummary(); // In real implementation, apply discount
+            } else {
+                showNotification('Invalid promo code', 'error');
+            }
+        }
+
+        async function loadRecommendedProducts() {
+            try {
+                // In real implementation, this would fetch from Google Apps Script
+                const recommendedContainer = document.getElementById('recommendedProducts');
+                recommendedContainer.innerHTML = '<p class="no-recommendations">No recommendations available at this time.</p>';
+            } catch (error) {
+                console.error('Error loading recommended products:', error);
+            }
+        }
+    </script>
+</body>
+</html>

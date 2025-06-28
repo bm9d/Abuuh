@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Parfum Luxe</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header__container">
+            <div class="header__logo">
+                <h1><a href="index.html">Parfum Luxe</a></h1>
+            </div>
+            <nav class="header__nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="products.html" class="nav__link nav__link--active">Products</a></li>
+                    <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
+                    <li class="nav__item"><a href="contact.html" class="nav__link">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header__actions">
+                <button class="header__search-btn" id="searchToggle">
+                    <i class="fas fa-search"></i>
+                </button>
+                <a href="cart.html" class="header__cart">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </a>
+            </div>
+        </div>
+        <button class="header__mobile-toggle" id="mobileToggle">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="header__search" id="searchBar">
+            <input type="text" class="search__input" placeholder="Search perfumes..." id="searchInput">
+            <button class="search__btn" id="searchBtn">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-header__title">Our Perfume Collection</h1>
+            <p class="page-header__subtitle">Discover your perfect fragrance</p>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section">
+        <div class="container">
+            <div class="products-layout">
+                <!-- Filters Sidebar -->
+                <aside class="filters" id="filtersPanel">
+                    <div class="filters__header">
+                        <h3 class="filters__title">Filters</h3>
+                        <button class="filters__clear" id="clearFilters">Clear All</button>
+                    </div>
+
+                    <!-- Brand Filter -->
+                    <div class="filter-group">
+                        <h4 class="filter-group__title">Brand</h4>
+                        <div class="filter-group__content" id="brandFilters">
+                            <!-- Brands will be loaded dynamically -->
+                        </div>
+                    </div>
+
+                    <!-- Scent Filter -->
+                    <div class="filter-group">
+                        <h4 class="filter-group__title">Scent Family</h4>
+                        <div class="filter-group__content" id="scentFilters">
+                            <!-- Scents will be loaded dynamically -->
+                        </div>
+                    </div>
+
+                    <!-- Price Filter -->
+                    <div class="filter-group">
+                        <h4 class="filter-group__title">Price Range</h4>
+                        <div class="filter-group__content">
+                            <div class="price-range">
+                                <input type="range" id="priceMin" min="0" max="500" value="0" class="price-slider">
+                                <input type="range" id="priceMax" min="0" max="500" value="500" class="price-slider">
+                                <div class="price-display">
+                                    $<span id="priceMinValue">0</span> - $<span id="priceMaxValue">500</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Products Content -->
+                <main class="products-content">
+                    <!-- Toolbar -->
+                    <div class="products-toolbar">
+                        <div class="products-toolbar__left">
+                            <button class="filters-toggle" id="filtersToggle">
+                                <i class="fas fa-filter"></i>
+                                Filters
+                            </button>
+                            <span class="products-count" id="productsCount">0 products</span>
+                        </div>
+                        <div class="products-toolbar__right">
+                            <select class="sort-select" id="sortSelect">
+                                <option value="default">Sort by</option>
+                                <option value="name-asc">Name (A-Z)</option>
+                                <option value="name-desc">Name (Z-A)</option>
+                                <option value="price-asc">Price (Low to High)</option>
+                                <option value="price-desc">Price (High to Low)</option>
+                            </select>
+                            <div class="view-toggle">
+                                <button class="view-toggle__btn view-toggle__btn--active" data-view="grid">
+                                    <i class="fas fa-th"></i>
+                                </button>
+                                <button class="view-toggle__btn" data-view="list">
+                                    <i class="fas fa-list"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Products Grid -->
+                    <div class="products-grid" id="productsGrid">
+                        <!-- Products will be loaded dynamically -->
+                        <div class="no-products" id="noProducts" style="display: none;">
+                            <i class="fas fa-search"></i>
+                            <h3>No products found</h3>
+                            <p>Try adjusting your filters or search terms</p>
+                        </div>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="pagination" id="pagination">
+                        <!-- Pagination will be generated dynamically -->
+                    </div>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__section">
+                    <h3 class="footer__title">Parfum Luxe</h3>
+                    <p class="footer__description">Your destination for premium perfumes and luxury fragrances.</p>
+                    <div class="footer__social">
+                        <a href="#" class="footer__social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="footer__social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="footer__social-link"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer__section">
+                    <h4 class="footer__subtitle">Quick Links</h4>
+                    <ul class="footer__list">
+                        <li><a href="products.html" class="footer__link">All Products</a></li>
+                        <li><a href="about.html" class="footer__link">About Us</a></li>
+                        <li><a href="contact.html" class="footer__link">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h4 class="footer__subtitle">Customer Service</h4>
+                    <ul class="footer__list">
+                        <li><a href="#" class="footer__link">Shipping Info</a></li>
+                        <li><a href="#" class="footer__link">Returns</a></li>
+                        <li><a href="#" class="footer__link">Size Guide</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h4 class="footer__subtitle">Contact Info</h4>
+                    <p class="footer__contact">Email: info@parfumluxe.com</p>
+                    <p class="footer__contact">Phone: +1 (555) 123-4567</p>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2025 Parfum Luxe. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <script src="js/utils.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/products.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+Develop a comprehensive plan for building an e-commerce website dedicated to perfumes, utilizing HTML, CSS, and JavaScript exclusively. This plan should encompass all aspects of the website, from front-end design and user experience to back-end functionality (achieved through JavaScript and integration with Google Apps Script).
+
+Specifically, outline the following:
+
+1.  Website Structure & Front-End Development (HTML, CSS, JavaScript):
+
+    *   Detailed sitemap and page structure (e.g., homepage, product listing page, product detail page, shopping cart, checkout, about us, contact).
+    *   Wireframes or mockups for key pages, focusing on user interface (UI) and user experience (UX) principles. Consider responsive design for various screen sizes.
+    *   CSS framework or methodology to be used (e.g., BEM, SMACSS, or custom CSS).
+    *   JavaScript libraries or frameworks (if any) for enhanced interactivity and dynamic content (e.g., handling product filtering, search functionality, image carousels).
+    *   Implementation details for key features:
+        *   Product display and filtering (e.g., by brand, scent, price).
+        *   Shopping cart functionality (adding, removing, updating quantities).
+        *   Checkout process (address input, payment integration - specify placeholder payment methods since no real payment gateway will be used).
+        *   User authentication (consider basic local storage implementation for demonstration purposes).
+        *   Search functionality.
+
+2.  Back-End Functionality with Google Apps Script (Code.gs):
+
+    *   Define the data structure for storing perfume information (e.g., Google Sheet format). Include fields like product name, description, price, image URL, brand, scent profile, etc.
+    *   Develop Google Apps Script functions (in Code.gs) to:
+        *   Read perfume data from the Google Sheet.
+        *   Write order information to a separate Google Sheet upon checkout (including user details, order items, total amount).
+        *   Implement basic inventory management (decrementing stock levels after an order).
+        *   Potentially implement email notifications for order confirmations (using `MailApp` service).
+
+3.  Dashboard Development (dashboard.html):
+
+    *   Design and implement a dashboard using HTML, CSS, and JavaScript that allows for:
+        *   Displaying key website statistics (e.g., total orders, revenue, top-selling perfumes).
+        *   Viewing a list of recent orders with details.
+        *   Potentially adding/editing/deleting perfume data (interacting with the Google Sheet through Apps Script).
+    *   Describe how `dashboard.html` will interact with `Code.gs` to fetch and display data.
+
+4.  Integration & Deployment:
+
+    *   Explain how the front-end website will communicate with the Google Apps Script functions (e.g., using `google.script.run`).
+    *   Outline the steps for deploying the website (e.g., using a static web hosting service like Netlify or GitHub Pages).
+    *   Describe security considerations (e.g., data validation, preventing script injection).
+
+5.  Testing & Debugging:
+
+    *   Define a testing strategy for both front-end and back-end components.
+    *   Outline debugging techniques for HTML, CSS, JavaScript, and Google Apps Script.
+
+This detailed plan should provide a clear roadmap for building the perfume e-commerce website, covering all necessary aspects from design to deployment. Assume no prior experience with perfume e-commerce development and provide explanations suitable for a developer with a solid understanding of HTML, CSS, JavaScript, and basic Google Apps Script. Focus on practical implementation details and best practices.

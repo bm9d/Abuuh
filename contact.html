@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Parfum Luxe</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header__container">
+            <div class="header__logo">
+                <h1><a href="index.html">Parfum Luxe</a></h1>
+            </div>
+            <nav class="header__nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="products.html" class="nav__link">Products</a></li>
+                    <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
+                    <li class="nav__item"><a href="contact.html" class="nav__link nav__link--active">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header__actions">
+                <button class="header__search-btn" id="searchToggle">
+                    <i class="fas fa-search"></i>
+                </button>
+                <a href="cart.html" class="header__cart">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </a>
+            </div>
+        </div>
+        <button class="header__mobile-toggle" id="mobileToggle">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="header__search" id="searchBar">
+            <input type="text" class="search__input" placeholder="Search perfumes..." id="searchInput">
+            <button class="search__btn" id="searchBtn">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-header__title">Contact Us</h1>
+            <p class="page-header__subtitle">We'd love to hear from you</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-layout">
+                <!-- Contact Form -->
+                <div class="contact-form">
+                    <h2 class="contact-form__title">Get in Touch</h2>
+                    <p class="contact-form__description">
+                        Have a question about our products or need fragrance advice? Send us a message and we'll get back to you as soon as possible.
+                    </p>
+                    
+                    <form class="form" id="contactForm" novalidate>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName" class="form-label">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" class="form-input" required>
+                                <div class="form-error" id="firstNameError"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName" class="form-label">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" class="form-input" required>
+                                <div class="form-error" id="lastNameError"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email Address *</label>
+                            <input type="email" id="email" name="email" class="form-input" required>
+                            <div class="form-error" id="emailError"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" class="form-input">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject" class="form-label">Subject *</label>
+                            <select id="subject" name="subject" class="form-select" required>
+                                <option value="">Select a subject</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="product">Product Question</option>
+                                <option value="order">Order Support</option>
+                                <option value="recommendation">Fragrance Recommendation</option>
+                                <option value="return">Returns & Exchanges</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <div class="form-error" id="subjectError"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message *</label>
+                            <textarea id="message" name="message" class="form-textarea" rows="6" placeholder="Tell us how we can help you..." required></textarea>
+                            <div class="form-error" id="messageError"></div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn--primary btn--large">Send Message</button>
+                    </form>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <h2 class="contact-info__title">Contact Information</h2>
+                    
+                    <div class="contact-info__item">
+                        <div class="contact-info__icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-info__content">
+                            <h3>Email Us</h3>
+                            <p>info@parfumluxe.com</p>
+                            <p>support@parfumluxe.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info__item">
+                        <div class="contact-info__icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-info__content">
+                            <h3>Call Us</h3>
+                            <p>+1 (555) 123-4567</p>
+                            <p>Mon-Fri: 9am-6pm EST</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info__item">
+                        <div class="contact-info__icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-info__content">
+                            <h3>Visit Us</h3>
+                            <p>123 Fragrance Avenue<br>
+                            New York, NY 10001<br>
+                            United States</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info__item">
+                        <div class="contact-info__icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-info__content">
+                            <h3>Business Hours</h3>
+                            <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+                            <p>Saturday: 10:00 AM - 4:00 PM</p>
+                            <p>Sunday: Closed</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section__title">Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <button class="faq-item__question" onclick="toggleFAQ(this)">
+                        <span>How do I choose the right fragrance?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-item__answer">
+                        <p>Choosing the right fragrance is personal. Consider the occasion, your personality, and the season. We recommend starting with samples or visiting our store for a consultation with our fragrance experts.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-item__question" onclick="toggleFAQ(this)">
+                        <span>What is your return policy?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-item__answer">
+                        <p>We offer a 30-day return policy for unopened items in their original packaging. For opened fragrances, we accept returns within 14 days if you're not completely satisfied.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-item__question" onclick="toggleFAQ(this)">
+                        <span>Do you offer samples?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-item__answer">
+                        <p>Yes! We offer 2ml samples of most fragrances in our collection. Samples are a great way to try a fragrance before committing to a full bottle.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-item__question" onclick="toggleFAQ(this)">
+                        <span>How should I store my perfumes?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-item__answer">
+                        <p>Store your perfumes in a cool, dry place away from direct sunlight and heat. Keep them in their original boxes when possible to protect from light exposure.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-item__question" onclick="toggleFAQ(this)">
+                        <span>Do you ship internationally?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-item__answer">
+                        <p>Currently, we ship within the United States and Canada. We're working on expanding our international shipping options. Please contact us for specific inquiries about international orders.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-item__question" onclick="toggleFAQ(this)">
+                        <span>Are all your perfumes authentic?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-item__answer">
+                        <p>Absolutely! We guarantee the authenticity of all our fragrances. We work directly with authorized distributors and perfume houses to ensure you receive only genuine products.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__section">
+                    <h3 class="footer__title">Parfum Luxe</h3>
+                    <p class="footer__description">Your destination for premium perfumes and luxury fragrances.</p>
+                    <div class="footer__social">
+                        <a href="#" class="footer__social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="footer__social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="footer__social-link"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer__section">
+                    <h4 class="footer__subtitle">Quick Links</h4>
+                    <ul class="footer__list">
+                        <li><a href="products.html" class="footer__link">All Products</a></li>
+                        <li><a href="about.html" class="footer__link">About Us</a></li>
+                        <li><a href="contact.html" class="footer__link">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h4 class="footer__subtitle">Customer Service</h4>
+                    <ul class="footer__list">
+                        <li><a href="#" class="footer__link">Shipping Info</a></li>
+                        <li><a href="#" class="footer__link">Returns</a></li>
+                        <li><a href="#" class="footer__link">Size Guide</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h4 class="footer__subtitle">Contact Info</h4>
+                    <p class="footer__contact">Email: info@parfumluxe.com</p>
+                    <p class="footer__contact">Phone: +1 (555) 123-4567</p>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2025 Parfum Luxe. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/utils.js"></script>
+    <script src="js/cart.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCartCount();
+            initializeContactForm();
+        });
+
+        function initializeContactForm() {
+            const form = document.getElementById('contactForm');
+            form.addEventListener('submit', handleContactSubmit);
+        }
+
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            
+            if (validateContactForm()) {
+                showLoading();
+                
+                // Simulate form submission
+                setTimeout(() => {
+                    hideLoading();
+                    showNotification('Thank you for your message! We\'ll get back to you soon.', 'success');
+                    document.getElementById('contactForm').reset();
+                }, 2000);
+            }
+        }
+
+        function validateContactForm() {
+            const fields = [
+                { id: 'firstName', name: 'First Name' },
+                { id: 'lastName', name: 'Last Name' },
+                { id: 'email', name: 'Email', type: 'email' },
+                { id: 'subject', name: 'Subject' },
+                { id: 'message', name: 'Message' }
+            ];
+
+            let isValid = true;
+
+            fields.forEach(field => {
+                const input = document.getElementById(field.id);
+                const error = document.getElementById(field.id + 'Error');
+                
+                if (!input.value.trim()) {
+                    showFieldError(error, `${field.name} is required`);
+                    isValid = false;
+                } else if (field.type === 'email' && !isValidEmail(input.value)) {
+                    showFieldError(error, 'Please enter a valid email address');
+                    isValid = false;
+                } else {
+                    clearFieldError(error);
+                }
+            });
+
+            return isValid;
+        }
+
+        function toggleFAQ(button) {
+            const faqItem = button.parentElement;
+            const answer = faqItem.querySelector('.faq-item__answer');
+            const icon = button.querySelector('i');
+            
+            faqItem.classList.toggle('faq-item--active');
+            
+            if (faqItem.classList.contains('faq-item--active')) {
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                answer.style.maxHeight = '0';
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+    </script>
+</body>
+</html>

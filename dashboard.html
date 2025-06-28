@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Parfum Luxe</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="dashboard-body">
+    <!-- Dashboard Header -->
+    <header class="dashboard-header">
+        <div class="dashboard-header__container">
+            <div class="dashboard-header__left">
+                <h1 class="dashboard-header__title">Parfum Luxe Admin</h1>
+            </div>
+            <div class="dashboard-header__right">
+                <button class="dashboard-header__refresh" id="refreshData">
+                    <i class="fas fa-sync-alt"></i>
+                    Refresh
+                </button>
+                <a href="index.html" class="dashboard-header__link">
+                    <i class="fas fa-external-link-alt"></i>
+                    View Store
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Dashboard Layout -->
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar">
+            <nav class="dashboard-nav">
+                <ul class="dashboard-nav__list">
+                    <li class="dashboard-nav__item">
+                        <a href="#overview" class="dashboard-nav__link dashboard-nav__link--active" data-section="overview">
+                            <i class="fas fa-chart-line"></i>
+                            Overview
+                        </a>
+                    </li>
+                    <li class="dashboard-nav__item">
+                        <a href="#products" class="dashboard-nav__link" data-section="products">
+                            <i class="fas fa-box"></i>
+                            Products
+                        </a>
+                    </li>
+                    <li class="dashboard-nav__item">
+                        <a href="#orders" class="dashboard-nav__link" data-section="orders">
+                            <i class="fas fa-shopping-cart"></i>
+                            Orders
+                        </a>
+                    </li>
+                    <li class="dashboard-nav__item">
+                        <a href="#customers" class="dashboard-nav__link" data-section="customers">
+                            <i class="fas fa-users"></i>
+                            Customers
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <!-- Overview Section -->
+            <section class="dashboard-section dashboard-section--active" id="overview">
+                <div class="dashboard-section__header">
+                    <h2 class="dashboard-section__title">Overview</h2>
+                    <div class="dashboard-section__actions">
+                        <select class="dashboard-select" id="overviewPeriod">
+                            <option value="7">Last 7 days</option>
+                            <option value="30" selected>Last 30 days</option>
+                            <option value="90">Last 90 days</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Stats Cards -->
+                <div class="stats-grid">
+                    <div class="stats-card">
+                        <div class="stats-card__icon">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <div class="stats-card__content">
+                            <h3 class="stats-card__value" id="totalRevenue">$0.00</h3>
+                            <p class="stats-card__label">Total Revenue</p>
+                            <span class="stats-card__change stats-card__change--positive" id="revenueChange">+0%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="stats-card">
+                        <div class="stats-card__icon">
+                            <i class="fas fa-shopping-bag"></i>
+                        </div>
+                        <div class="stats-card__content">
+                            <h3 class="stats-card__value" id="totalOrders">0</h3>
+                            <p class="stats-card__label">Total Orders</p>
+                            <span class="stats-card__change stats-card__change--positive" id="ordersChange">+0%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="stats-card">
+                        <div class="stats-card__icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stats-card__content">
+                            <h3 class="stats-card__value" id="totalCustomers">0</h3>
+                            <p class="stats-card__label">Total Customers</p>
+                            <span class="stats-card__change stats-card__change--positive" id="customersChange">+0%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="stats-card">
+                        <div class="stats-card__icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="stats-card__content">
+                            <h3 class="stats-card__value" id="avgOrderValue">$0.00</h3>
+                            <p class="stats-card__label">Avg. Order Value</p>
+                            <span class="stats-card__change stats-card__change--positive" id="avgOrderChange">+0%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Orders -->
+                <div class="dashboard-widget">
+                    <h3 class="dashboard-widget__title">Recent Orders</h3>
+                    <div class="table-container">
+                        <table class="dashboard-table" id="recentOrdersTable">
+                            <thead>
+                                <tr>
+                                    <th>Order ID</th>
+                                    <th>Customer</th>
+                                    <th>Date</th>
+                                    <th>Status</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+                            <tbody id="recentOrdersBody">
+                                <tr>
+                                    <td colspan="5" class="table-empty">No recent orders found</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Top Products -->
+                <div class="dashboard-widget">
+                    <h3 class="dashboard-widget__title">Top Selling Products</h3>
+                    <div class="top-products" id="topProducts">
+                        <div class="top-products__empty">
+                            <p>No sales data available</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Products Section -->
+            <section class="dashboard-section" id="products">
+                <div class="dashboard-section__header">
+                    <h2 class="dashboard-section__title">Products</h2>
+                    <div class="dashboard-section__actions">
+                        <button class="btn btn--primary" id="addProductBtn">
+                            <i class="fas fa-plus"></i>
+                            Add Product
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Products Table -->
+                <div class="dashboard-widget">
+                    <div class="dashboard-widget__header">
+                        <div class="search-box">
+                            <input type="text" class="search-input" placeholder="Search products..." id="productSearch">
+                            <i class="fas fa-search"></i>
+                        </div>
+                    </div>
+                    <div class="table-container">
+                        <table class="dashboard-table">
+                            <thead>
+                                <tr>
+                                    <th>Product</th>
+                                    <th>Brand</th>
+                                    <th>Price</th>
+                                    <th>Stock</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="productsTableBody">
+                                <tr>
+                                    <td colspan="6" class="table-empty">No products found</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Orders Section -->
+            <section class="dashboard-section" id="orders">
+                <div class="dashboard-section__header">
+                    <h2 class="dashboard-section__title">Orders</h2>
+                    <div class="dashboard-section__actions">
+                        <select class="dashboard-select" id="orderStatus">
+                            <option value="">All Orders</option>
+                            <option value="pending">Pending</option>
+                            <option value="processing">Processing</option>
+                            <option value="shipped">Shipped</option>
+                            <option value="delivered">Delivered</option>
+                            <option value="cancelled">Cancelled</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Orders Table -->
+                <div class="dashboard-widget">
+                    <div class="table-container">
+                        <table class="dashboard-table">
+                            <thead>
+                                <tr>
+                                    <th>Order ID</th>
+                                    <th>Customer</th>
+                                    <th>Date</th>
+                                    <th>Items</th>
+                                    <th>Total</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="ordersTableBody">
+                                <tr>
+                                    <td colspan="7" class="table-empty">No orders found</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Customers Section -->
+            <section class="dashboard-section" id="customers">
+                <div class="dashboard-section__header">
+                    <h2 class="dashboard-section__title">Customers</h2>
+                </div>
+
+                <!-- Customers Table -->
+                <div class="dashboard-widget">
+                    <div class="table-container">
+                        <table class="dashboard-table">
+                            <thead>
+                                <tr>
+                                    <th>Customer</th>
+                                    <th>Email</th>
+                                    <th>Orders</th>
+                                    <th>Total Spent</th>
+                                    <th>Last Order</th>
+                                </tr>
+                            </thead>
+                            <tbody id="customersTableBody">
+                                <tr>
+                                    <td colspan="5" class="table-empty">No customers found</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Product Modal -->
+    <div class="modal" id="productModal">
+        <div class="modal__overlay" id="productModalOverlay"></div>
+        <div class="modal__content">
+            <div class="modal__header">
+                <h3 class="modal__title" id="productModalTitle">Add Product</h3>
+                <button class="modal__close" id="productModalClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form class="modal__form" id="productForm">
+                <div class="form-group">
+                    <label for="productName" class="form-label">Product Name *</label>
+                    <input type="text" id="productName" name="name" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label for="productBrand" class="form-label">Brand *</label>
+                    <input type="text" id="productBrand" name="brand" class="form-input" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="productPrice" class="form-label">Price *</label>
+                        <input type="number" id="productPrice" name="price" class="form-input" step="0.01" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="productStock" class="form-label">Stock *</label>
+                        <input type="number" id="productStock" name="stock" class="form-input" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="productScent" class="form-label">Scent Family *</label>
+                    <select id="productScent" name="scent_family" class="form-select" required>
+                        <option value="">Select Scent</option>
+                        <option value="Fresh">Fresh</option>
+                        <option value="Floral">Floral</option>
+                        <option value="Woody">Woody</option>
+                        <option value="Oriental">Oriental</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="productDescription" class="form-label">Description</label>
+                    <textarea id="productDescription" name="description" class="form-textarea" rows="4"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="productImage" class="form-label">Image URL</label>
+                    <input type="url" id="productImage" name="image_url" class="form-input">
+                </div>
+                <div class="modal__actions">
+                    <button type="button" class="btn btn--outline" id="productFormCancel">Cancel</button>
+                    <button type="submit" class="btn btn--primary">Save Product</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <script src="js/utils.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
